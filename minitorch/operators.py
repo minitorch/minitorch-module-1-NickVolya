@@ -125,10 +125,10 @@ def zipWith(
     return (func(elem_1, elem_2) for elem_1, elem_2 in zip(iterable_1, iterable_2))
 
 
-def reduce(func: Callable[[float, float], float], iterable: Iterable[float]) -> Optional[float]:
-    result = None
+def reduce(func: Callable[[float, float], float], iterable: Iterable[float]) -> float:
+    result = 0.0
     for elem in iterable:
-        if result is None:
+        if not result:
             result = elem
             continue
         result = func(result, elem)
